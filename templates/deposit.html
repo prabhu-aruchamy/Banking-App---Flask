@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Short URL</title>
+    <meta name="description" content="Short URL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/sstyle.css')}}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body >
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="shortURL" class="w3-bar-item w3-button"><b>URL</b> Shortner</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="home" class="w3-bar-item w3-button"> <-- Home</a>
+            <a href="mybalance" class="w3-bar-item w3-button"> Check Balance</a>
+          </div>
+        </div>
+      </div>
+
+    <!-- slider_area_start -->
+    <div class="slider_area" style="background-image:url({{url_for('static', filename='img/nfbg.jpg')}})">
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay2">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-9">
+                        <div class="slider_text text-center">
+                            <p>Enter the Deposit Amount</p>
+                            <h3> In Rupees</h3>
+                            <div class="find_dowmain">
+                                <form action="deposit" method = 'POST' class="find_dowmain_form">
+                                    <input id="amount" name="amount" type="text" placeholder="Enter Deposit Amount">
+                                    <button type="submit">Deposit</button>
+                                    <p>{{status}}</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+</body>
+
+</html>
