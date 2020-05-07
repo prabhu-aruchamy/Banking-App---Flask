@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Url</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/select2.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/perfect-scrollbar.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/main.css')}}">
+
+</head>
+<body style="background-image:url({{url_for('static', filename='img/bg.jpeg')}})">
+
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Date</th>
+                                    <th class="cell100 column2">Details</th>
+									<th class="cell100 column3">Amount</th>
+									<th class="cell100 column4">Balance</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for item in items %}
+								<tr class="row100 body">
+									<td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;" class="cell100 column1">{{item[0]}}</td>
+									<td style="max-width: 500px; overflow: hidden; text-overflow: ellipsis;" class="cell100 column2">{{item[1]}}</td>
+									<td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;" class="cell100 column3">{{item[2]}}</td>
+									<td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;"   class="cell100 column4">{{item[3]}}</td>
+                                </tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/popper.js')}}"></script>
+	<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/perfect-scrollbar.min.js')}}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+
+
+	</script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/tablemain.js')}}"></script>
+
+</body>
+</html>
